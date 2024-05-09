@@ -10,10 +10,12 @@ function objectMethods(myObject){
     
     let values = Object.values(myObject);
     console.log("After Object.values():", values);
-    
+
+    // returns array of an key:object of enumerable properties of object
     let entries = Object.entries(myObject);
     console.log("After Object.entries():", entries);
     
+    // it checks the key is available or not it returns true or false
     let hasProp = myObject.hasOwnProperty("property");
     console.log("After hasOwnProperty(): ", hasProp);
     
