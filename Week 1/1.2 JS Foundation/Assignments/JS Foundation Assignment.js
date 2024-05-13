@@ -64,5 +64,5 @@ function startClock(){
     console.log("HH:MM:SS (ctrl + c for quit)")
     setInterval(clock, 1000);
 }
-startClock();
+// startClock();
 // ----------------------
