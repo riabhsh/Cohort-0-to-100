@@ -101,3 +101,150 @@ function asyncDemo2(){
 
 
 // --------------------------
+
+
+
+// ++++++++++++++++++++++++++++++++
+// --------------------------------
+// This is From Shradha Khapra's Lecture video on async javascript
+// --------------------------------
+// ++++++++++++++++++++++++++++++++
+
+//1. Callback and Callback Hell
+function CallbackDemo(){
+    function data(num, numNext){
+        setTimeout(() => {
+            console.log("Data:", num);
+            if(numNext){
+                numNext();
+            }
+        }, 2000);
+    }
+    
+    // Callback HEll
+    
+    console.log("Getting Data...1");
+    data(1, () => {
+        console.log("Getting Data...2");
+        data(2, () => {
+            console.log("Getting Data...3");
+            data(3, () => {
+                console.log("Getting Data...4");
+                data(4);
+            })
+        });
+    });
+}
+
+//2. Promises and Promises Chaining
+function PromiseDemo(){
+    function promiseData(data){
+        return new Promise((resolve, reject) => {
+            console.log("Promise Data:", data);
+            resolve("success");
+            // reject("reject");
+        });
+    }
+    
+    let result = promiseData(1);
+    console.log(result);
+    
+    promiseData(2).then((res) => {console.log("resolve message:", res);});
+    promiseData(2).catch((err) => {console.log("error message:", err);});
+}
+function PromiseChainingDemo(){
+    function PromiseChaining(data){
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {console.log("data:",data); resolve("Success");}, 2000);
+        });
+    }
+
+    console.log("Getting Data...1");
+    PromiseChaining(1).then((res) => {
+        console.log("Getting Data...2");
+        PromiseChaining(2).then((res) => {
+            console.log("Getting Data...3");
+            PromiseChaining(3).then((res) => {
+                console.log("Getting Data...4");
+                PromiseChaining(4);
+            });
+        });
+    });
+}
+
+// 3. Async-Await
+function AsyncAwaitDemo(){
+    function api(){
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log("Weather Data");
+                resolve(200);
+            }, 1000);
+            });
+    }
+
+    // async function getWeather(){
+    //     await api();
+    // }
+    // getWeather();
+    // or we can use IIFE or Anonymous function for get rid of unecessary function call 
+
+    (async () => {
+        await api();
+    })();
+}
+function AsyncAwaitHeaven(){
+   
+    function getData(data){
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log("Data:",data);
+                resolve(200);
+            }, 1000);
+        });
+    };
+
+    (async () => {
+        console.log("Getting Data...1");
+        await getData(1);
+        console.log("Getting Data...2");
+        await getData(2);
+        console.log("Getting Data...3");
+        await getData(3);
+        console.log("Getting Data...4");
+        await getData(4);
+    })();
+
+}
+//+++ Run bellow functions one by one +++
+// CallbackDemo();
+// PromiseDemo();
+// PromiseChainingDemo();
+// AsyncAwaitDemo();
+// AsyncAwaitHeaven();
+
+
+// ++ Callbacks, Promises & Async Await (imp points)++
+// async await >> promise chains >> callback hell
+// above things solves the problem of async management like when to run when 
+// async always returns Promise
+// await is valid only under async function
+// we have to always put async-await inside a function and tbh this is unnecessary thing thats why we have a better thing which is IIFE: Immedietely Invoked Function Expression
+// IIFE is a function that is called immediately as soon as it is defined
+// or Self Executing Anonymous function
+// 
+
+// eg:
+{
+    (function (){
+        // ...
+    })();
+
+    (() => {
+        // ...
+    })();
+
+    (async () => {
+        // ...
+    })();
+}

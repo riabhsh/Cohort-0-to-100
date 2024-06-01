@@ -18,6 +18,6 @@ function jsonMethods(jsonstring){
     console.log("\nAfter JSON.stringified():\n",jsonStringified,"\n");
 }
 
-const sampleJSONString = '{"key": "value", "name": "Rishabh maurya", "age": "24","nested": {"nestedkey": "nesteedValue"}}';
+const sampleJSONString = '{"key": "value", "name": "Rishabh maurya", "age": "24", "nested": {"nestedkey": "nesteedValue"}}';
 
 jsonMethods(sampleJSONString);

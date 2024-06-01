@@ -1,7 +1,5 @@
 // ++++ 1.Async functions vs sync functions ++++
 
-const { resolve } = require("path");
-
 // synchronous: only one thing at a time.
 // Asynchronous: Multiple Things are Context Switching with each other 
 
@@ -12,7 +10,7 @@ const { resolve } = require("path");
 // some commmon Async functions
 // 1. setTimeout(), 
 // 2. fs.readFile: to read a file from your file system
-// 3. Fetch:s to fetch some data from API Endpoint
+// 3. Fetch: is to fetch some data from API Endpoint
 
 // 1. setTimeout() async function
 function findSum(n) {
@@ -200,7 +198,7 @@ function promisePendingDemo(){
 
 // any function that wants to use await, needs to be async
 
-// rather then using the .then syntax, we add await before and fet the final value in the variable
+// rather then using the .then syntax, we add await before, and fetch the final value in the variable
 
 
 function nonAsyncFunction(){

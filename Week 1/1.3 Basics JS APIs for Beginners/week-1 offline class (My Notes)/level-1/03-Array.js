@@ -7,7 +7,7 @@ let secondArray = [11, 22, 33, 44, 55];
 // 1. push
 function pushExample(arr, element){
     console.log("\n1. push()");
-    console.log("Before:",arr);
+    console.log("Before:", arr);
     arr.push(element);
     console.log("After:", arr);
 }

@@ -12,11 +12,11 @@ explainParseInt("24.20210");
 
 
 
-// parseFloat() global function converts Strings into Integers
+// parseFloat() global function converts Strings into Float
 function explainParseFloat(value){
     console.log("\nOrginal value:",value);
     let result = parseFloat(value);
-    console.log("parseInt Value:",result);
+    console.log("parseFloat Value:",result);
 }
 console.log("\nparseFloat() global function converts Strings into Floats\n");
 // Example Usage for parseFloat

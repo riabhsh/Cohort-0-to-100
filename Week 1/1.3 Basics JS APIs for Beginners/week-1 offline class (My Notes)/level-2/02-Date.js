@@ -74,21 +74,25 @@
 
 // function addition(){
 //     let a = 0;
-//     for(let i = 0; i <= 1000000000; i++){
+//     for(let i = 0; i <= 10000000000; i++){
 //         a = a + i;
 //     }
 //     return console.log("hogaya bhai");
 // }
 
-// beforeTime = new Date;
-// let beforeTimeinMS = parseInt(beforeTime.getTime()/1000);
+// beforeTime = new Date();
+// let beforeTimeinSec = parseInt(beforeTime.getTime()/1000);
+
+
+
+// console.log("Before Time:", beforeTimeinSec - beforeTimeinSec+"s");
 
 // addition();
 
-// afterTime = new Date;
-// let afterTimeinMS = parseInt(afterTime.getTime()/1000);
+// afterTime = new Date();
+// let afterTimeinSec = parseInt(afterTime.getTime()/1000);
 
-// console.log(afterTimeinMS - beforeTimeinMS+"s");
+// console.log("After Time:", afterTimeinSec - beforeTimeinSec+"s");
 
 
 // HARKIRAT COHORTS HERE
